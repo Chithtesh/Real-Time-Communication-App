@@ -1,0 +1,4 @@
+﻿.ch-navbar { background: linear-gradient(90deg, #4f46e5, #7c3aed); }
+.ch-navbar .navbar-brand, .ch-navbar .nav-link, .ch-navbar .navbar-toggler-icon { color: #fff; }
+.ch-navbar .nav-link.active { font-weight: 700; text-decoration: underline; }
+.ch-user { color: #e0e7ff !important; }

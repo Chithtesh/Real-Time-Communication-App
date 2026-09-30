@@ -1,0 +1,9 @@
+﻿<app-navbar></app-navbar>
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
+<div class="toast-stack">
+  <div *ngFor="let t of toast.toasts" class="toast-item" [ngClass]="'toast-' + t.type" (click)="toast.remove(t.id)">
+    {{ t.message }}
+  </div>
+</div>

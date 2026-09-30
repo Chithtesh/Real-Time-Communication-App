@@ -1,0 +1,23 @@
+﻿<section class="ch-hero text-center">
+  <div class="container">
+    <h1>Connect. Communicate. Collaborate.</h1>
+    <p class="lead mx-auto" style="max-width:720px">ConnectHub is a real-time video conferencing and collaboration platform — video calls, screen sharing, chat, file sharing and a shared whiteboard, all in your browser.</p>
+    <div class="d-flex gap-3 justify-content-center mt-4 flex-wrap">
+      <button class="btn btn-light btn-lg px-4" (click)="startMeeting()"><i class="fa-solid fa-video me-2"></i>Start Meeting</button>
+      <button class="btn btn-outline-light btn-lg px-4" (click)="joinMeeting()"><i class="fa-solid fa-right-to-bracket me-2"></i>Join Meeting</button>
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let f of features">
+        <div class="card feature-card p-4">
+          <div class="feature-icon mb-3"><i [class]="f.icon"></i></div>
+          <h5>{{ f.title }}</h5>
+          <p class="text-muted mb-0">{{ f.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

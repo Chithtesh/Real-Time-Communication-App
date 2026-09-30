@@ -1,0 +1,26 @@
+
+Initial chunk files   | Names                                         |  Raw size | Estimated transfer size
+main.js               | main                                          | 378.27 kB |               105.18 kB
+polyfills.js          | polyfills                                     | 105.40 kB |                32.16 kB
+styles.css, styles.js | styles                                        |  75.11 kB |                22.54 kB
+runtime.js            | runtime                                       |   2.73 kB |                 1.27 kB
+
+                      | Initial total                                 | 561.51 kB |               161.15 kB
+
+Lazy chunk files      | Names                                         |  Raw size | Estimated transfer size
+341.js                | pages-login-login-component                   |  33.29 kB |                 7.30 kB
+889.js                | pages-meeting-room-meeting-room-component     |  26.46 kB |                 6.45 kB
+199.js                | pages-dashboard-dashboard-component           |   4.16 kB |                 1.48 kB
+739.js                | pages-register-register-component             |   4.04 kB |                 1.45 kB
+413.js                | pages-create-meeting-create-meeting-component |   3.06 kB |                 1.22 kB
+195.js                | pages-login-login-component                   |   3.03 kB |                 1.21 kB
+47.js                 | pages-home-home-component                     |   2.83 kB |                 1.20 kB
+917.js                | pages-join-meeting-join-meeting-component     |   2.01 kB |               990 bytes
+common.js             | common                                        | 672 bytes |               346 bytes
+
+Build at: 2026-09-29T14:23:55.372Z - Hash: 404df95d7193e696 - Time: 63155ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+√ Compiled successfully.

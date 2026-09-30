@@ -1,0 +1,23 @@
+﻿<div class="container">
+  <div class="card auth-card">
+    <div class="card-body">
+      <h3 class="mb-1 text-center">Welcome back</h3>
+      <p class="text-center text-muted">Login to your ConnectHub account</p>
+      <div class="alert alert-danger py-2" *ngIf="error">{{ error }}</div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="you@example.com">
+          <div class="text-danger small" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">A valid email is required.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Your password">
+          <div class="text-danger small" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">Password is required.</div>
+        </div>
+        <button class="btn btn-primary w-100" [disabled]="loading">{{ loading ? 'Signing in...' : 'Login' }}</button>
+      </form>
+      <p class="text-center mt-3 mb-0">No account? <a routerLink="/register">Register here</a></p>
+    </div>
+  </div>
+</div>

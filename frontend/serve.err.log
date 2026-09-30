@@ -1,0 +1,25 @@
+****************************************************************************************
+This is a simple server for use in testing or debugging Angular applications locally.
+It hasn't been reviewed for security issues.
+
+DON'T USE IT FOR PRODUCTION!
+****************************************************************************************
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Warning: D:/Games/Real-Time Communication App/frontend/src/polyfills.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\pagefile.sys'
+Watchpack Error (stats): Error: EINVAL: invalid argument, lstat 'D:\System Volume Information'

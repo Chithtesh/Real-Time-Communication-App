@@ -1,0 +1,25 @@
+﻿<nav class="navbar navbar-expand-lg ch-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home"><i class="fa-solid fa-video me-2"></i>ConnectHub</a>
+    <button class="navbar-toggler" type="button" (click)="toggle()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="!collapsed">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/join-meeting" routerLinkActive="active">Join Meeting</a></li>
+        <li class="nav-item" *ngIf="auth.isLoggedIn()"><a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        <ng-container *ngIf="!auth.isLoggedIn(); else userMenu">
+          <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a></li>
+        </ng-container>
+        <ng-template #userMenu>
+          <li class="nav-item"><span class="nav-link ch-user"><i class="fa-solid fa-circle-user me-1"></i>{{ auth.currentUser()?.name }}</span></li>
+          <li class="nav-item"><a class="btn btn-sm btn-outline-light ms-lg-2" (click)="logout()" role="button">Logout</a></li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>

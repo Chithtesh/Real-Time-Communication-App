@@ -1,0 +1,22 @@
+﻿<div class="container py-4" style="max-width:640px">
+  <div class="card dash-card p-4">
+    <h4 class="mb-3"><i class="fa-solid fa-video me-2"></i>Create a Meeting</h4>
+    <div class="mb-3">
+      <label class="form-label">Meeting title (optional)</label>
+      <input class="form-control" [(ngModel)]="title" placeholder="e.g. Team Standup">
+    </div>
+    <button class="btn btn-primary w-100" (click)="create()" [disabled]="loading">{{ loading ? 'Creating...' : 'Generate Meeting' }}</button>
+    <div class="mt-4" *ngIf="meeting">
+      <hr>
+      <p class="mb-1 text-muted small">Share this Meeting ID or link:</p>
+      <div class="meeting-id-box d-flex justify-content-between align-items-center">
+        <span>{{ meeting.meetingId }}</span>
+        <button class="btn btn-sm btn-outline-light" (click)="copy()"><i class="fa-regular fa-copy"></i></button>
+      </div>
+      <div class="d-flex gap-2 mt-3 flex-wrap">
+        <button class="btn btn-outline-primary" (click)="copyLink()"><i class="fa-solid fa-link me-1"></i>Copy Link</button>
+        <button class="btn btn-success" (click)="start()"><i class="fa-solid fa-play me-1"></i>Start Meeting</button>
+      </div>
+    </div>
+  </div>
+</div>

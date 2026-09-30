@@ -1,0 +1,39 @@
+﻿<div class="container py-4">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card dash-card p-4 mb-4">
+        <h4 class="mb-1">Welcome back, {{ user?.name }}</h4>
+        <p class="text-muted">Start or join a real-time meeting.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <button class="btn btn-primary" (click)="create()"><i class="fa-solid fa-plus me-2"></i>Create Meeting</button>
+          <button class="btn btn-outline-primary" (click)="join()"><i class="fa-solid fa-right-to-bracket me-2"></i>Join Meeting</button>
+        </div>
+      </div>
+      <div class="card dash-card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Your Meetings</h5>
+          <button class="btn btn-sm btn-outline-secondary" (click)="load()"><i class="fa-solid fa-rotate"></i></button>
+        </div>
+        <div *ngIf="loading" class="text-center py-4"><div class="spinner-border text-primary"></div></div>
+        <div class="list-group list-group-flush" *ngIf="!loading">
+          <div class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let m of meetings">
+            <div><strong>{{ m.title }}</strong><div class="small text-muted">{{ m.meetingId }}  {{ fmt(m.createdAt) }}</div></div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge" [class.text-bg-success]="m.status==='active'" [class.text-bg-secondary]="m.status!=='active'">{{ m.status }}</span>
+              <button class="btn btn-sm btn-primary" (click)="open(m)">Open</button>
+            </div>
+          </div>
+          <p class="text-muted py-3 mb-0" *ngIf="meetings.length===0">No meetings yet. Create one to get started.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card dash-card p-4">
+        <h5 class="mb-3"><i class="fa-solid fa-circle-user me-2"></i>Profile</h5>
+        <p class="mb-1"><strong>{{ user?.name }}</strong></p>
+        <p class="text-muted small mb-1">{{ user?.email }}</p>
+        <p class="text-muted small mb-0">Member since {{ fmt(user?.createdAt) }}</p>
+      </div>
+    </div>
+  </div>
+</div>

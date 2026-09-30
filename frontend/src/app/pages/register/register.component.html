@@ -1,0 +1,33 @@
+﻿<div class="container">
+  <div class="card auth-card">
+    <div class="card-body">
+      <h3 class="mb-1 text-center">Create your account</h3>
+      <p class="text-center text-muted">Join ConnectHub in seconds</p>
+      <div class="alert alert-danger py-2" *ngIf="error">{{ error }}</div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input class="form-control" formControlName="name" placeholder="Jane Doe">
+          <div class="text-danger small" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">Name is required.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="you@example.com">
+          <div class="text-danger small" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">A valid email is required.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Min 8 chars, 1 letter & 1 number">
+          <div class="text-danger small" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">At least 8 characters with a letter and a number.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Re-enter password">
+          <div class="text-danger small" *ngIf="form.hasError('passwordMismatch')">Passwords do not match.</div>
+        </div>
+        <button class="btn btn-primary w-100" [disabled]="loading">{{ loading ? 'Creating...' : 'Register' }}</button>
+      </form>
+      <p class="text-center mt-3 mb-0">Already registered? <a routerLink="/login">Login here</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+﻿<div class="meeting-shell">
+  <div class="meeting-topbar">
+    <span class="fw-bold"><i class="fa-solid fa-video me-1"></i>ConnectHub</span>
+    <span class="badge text-bg-secondary">{{ meetingId }}</span>
+    <span class="ms-auto"><i class="fa-solid fa-users me-1"></i>{{ participants.length }}</span>
+    <span class="badge" [class.text-bg-success]="connected" [class.text-bg-danger]="!connected">{{ connected ? 'Connected' : 'Offline' }}</span>
+  </div>
+  <div class="meeting-body">
+    <div class="video-area"><app-video-grid [participants]="participants"></app-video-grid></div>
+    <div class="side-panel" [class.open]="!!panel" *ngIf="panel">
+      <div class="panel-tabs">
+        <button [class.active]="panel==='chat'" (click)="panel='chat'">Chat</button>
+        <button [class.active]="panel==='files'" (click)="openPanel('files')">Files</button>
+        <button [class.active]="panel==='board'" (click)="panel='board'">Board</button>
+        <button [class.active]="panel==='people'" (click)="panel='people'">People</button>
+      </div>
+      <app-chat #chat *ngIf="panel==='chat'" [meetingId]="meetingId"></app-chat>
+      <app-file-sharing #files *ngIf="panel==='files'" [meetingId]="meetingId"></app-file-sharing>
+      <app-whiteboard *ngIf="panel==='board'"></app-whiteboard>
+      <div style="overflow:auto" *ngIf="panel==='people'"><app-participants [participants]="participants"></app-participants></div>
+    </div>
+  </div>
+  <app-meeting-controls [micOff]="micOff" [camOff]="camOff" [sharing]="sharing" [panel]="panel"
+    (toggleMic)="toggleMic()" (toggleCam)="toggleCam()" (toggleShare)="toggleShare()" (openPanel)="openPanel($event)" (leave)="leave()"></app-meeting-controls>
+</div>

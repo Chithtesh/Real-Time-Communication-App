@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: false,\n  apiUrl: 'http://localhost:5000/api',\n  socketUrl: 'http://localhost:5000',\n  iceServers: [{\n    urls: 'stun:stun.l.google.com:19302'\n  }]\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
