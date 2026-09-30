@@ -168,4 +168,5 @@ TURN/STUN config via env, recording, adaptive bitrate, role-based rooms, e2ee, m
 
 ConnectHub demonstrates a production-style real-time architecture: an Angular SPA secured by JWT, an Express/MongoDB backend for persistence, Socket.io for low-latency signaling and collaboration, and WebRTC for encrypted peer-to-peer media. It covers authentication, authorization, real-time messaging, media streaming, file handling, canvas collaboration, security hardening and responsive design — the core competencies of full-stack development.
 #   R e a l - T i m e - C o m m u n i c a t i o n - A p p  
+ #   R e a l - T i m e - C o m m u n i c a t i o n - A p p  
  
